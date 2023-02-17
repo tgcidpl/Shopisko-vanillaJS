@@ -1,3 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 h1{
   color: blue;
+}
+
+.products-box{
+border: 1px solid blueviolet;
+display: flex;
 }
