@@ -20,7 +20,7 @@ export default function Print(productsURL) {
 
 function renderProducts(products) {
   const productList = document.createElement('ul');
-
+  productList.classList.add('products-box-list')
   products.forEach(product => {
     const listItem = document.createElement('li');
     const name = document.createElement('h2');

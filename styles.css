@@ -8,5 +8,17 @@ h1{
 
 .products-box{
 border: 1px solid blueviolet;
-display: flex;
 }
+
+.products-box-list{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  } 
+  
+  .products-box-list>li{
+border: 1px solid grey;
+padding: 0 2rem;
+  }
+  
