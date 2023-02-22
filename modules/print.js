@@ -33,13 +33,17 @@ function renderProducts(products) {
 
   const productList = document.createElement('ul');
   productList.classList.add('products-box-list')
+
   products.forEach(product => {
     const listItem = document.createElement('li');
     const name = document.createElement('h2');
     const brand = document.createElement('p');
     const price = document.createElement('p');
     const quantity = document.createElement('p');
+    const checkbox = document.createElement('input');
     const id = document.createElement('p');
+
+    checkbox.type = "checkbox";
 
     name.textContent = product[1]['name'];
     brand.textContent = `Brand: ${product[1]['brand']}`;
@@ -52,7 +56,11 @@ function renderProducts(products) {
     listItem.appendChild(brand);
     listItem.appendChild(price);
     listItem.appendChild(quantity);
+    listItem.appendChild(checkbox);
     listItem.appendChild(id);
+
+    listItem.classList.add('products-box-list-item')
+
     productList.appendChild(listItem);
   });
   return productList;
