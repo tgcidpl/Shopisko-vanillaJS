@@ -8,7 +8,7 @@ const quantity = document.getElementById('quantity')
 
 function handleAdd () {
 
-fetch(productsURL, {
+fetch(`${productsURL}.json`, {
   method: 'POST',
   body: JSON.stringify({name: name.value, brand: brand.value, price: +price.value, quantity: quantity.value})
 }).then(response => {

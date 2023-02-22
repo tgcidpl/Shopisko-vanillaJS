@@ -1,7 +1,7 @@
 const productsPrint = document.getElementById('products-print')
 
 export default function Print(productsURL) {
-  fetch(productsURL, {
+  fetch(`${productsURL}.json`, {
     method: 'GET',
   })
     .then(response => {

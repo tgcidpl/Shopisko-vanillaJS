@@ -1,21 +1,39 @@
 const deleteBtn = document.getElementById(`delete`)
 let productsListItems = document.getElementsByClassName(`products-box-list-item`)
 
-function getCheckedProductsIDs(productsListItems) {
-  let getCheckedProductsIDs = [];
-  for (let i=0; i<productsListItems.length; i++) {
-     if (productsListItems[i].lastChild.checked === true) {
-      getCheckedProductsIDs.push(productsListItems[i].firstChild.innerHTML);
-     }
+export default function Delete (productsURL) {
+  
+  function getCheckedProductsIDs(productsListItems) {
+    let checkedProductsIDs = [];
+    for (let i=0; i<productsListItems.length; i++) {
+        if (productsListItems[i].lastChild.checked === true) {
+        checkedProductsIDs.push(productsListItems[i].firstChild.innerHTML);
+        }
+    }
+    return checkedProductsIDs;
   }
-  return getCheckedProductsIDs.length > 0 ? console.log(`getCheckedProductsIDs:`, getCheckedProductsIDs)  : null;
-}
 
-export default function Delete () {
   function handleDelete (){
-    console.log(`delete test`)
-    console.log(`productsListItems:`, productsListItems)
-    getCheckedProductsIDs(productsListItems)
+    
+    let foo = getCheckedProductsIDs(productsListItems)
+
+    // below loops through every ID checked for deletion and requests DELETE from API
+
+    for (let i=0; i < foo.length; i++) {
+      let id = foo[i]
+    fetch(`${productsURL}/${id}.json`, {
+      method: 'DELETE',
+    }).then(response => {
+      if(response.ok){
+        return location.reload()
+      }
+      throw new Error('delete failed!');
+    }, networkError => {
+      console.log(`network error:`, networkError.message);
+    })
   }
+
+}
+  
   deleteBtn.addEventListener("click", handleDelete)
 }
