@@ -20,5 +20,8 @@ border: 1px solid blueviolet;
   .products-box-list>li{
 border: 1px solid grey;
 padding: 0 2rem;
+cursor: pointer;
   }
-  
+  .products-box-list>li:hover{
+    background-color: aqua;
+  }

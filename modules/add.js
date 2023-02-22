@@ -4,12 +4,13 @@ const addBtn = document.getElementById('add')
 const name = document.getElementById('name')
 const brand = document.getElementById('brand')
 const price = document.getElementById('price')
+const quantity = document.getElementById('quantity')
 
 function handleAdd () {
 
 fetch(productsURL, {
   method: 'POST',
-  body: JSON.stringify({name: name.value, brand: brand.value, price: +price.value})
+  body: JSON.stringify({name: name.value, brand: brand.value, price: +price.value, quantity: quantity.value})
 }).then(response => {
   if(response.ok){
 	  return response.json();  
@@ -20,6 +21,7 @@ fetch(productsURL, {
 }).then(jsonResponse => {
   console.log(`added item:`, jsonResponse);
 })
+location.reload()
 }
 
 addBtn.addEventListener("click", handleAdd)
