@@ -20,8 +20,7 @@ fetch(`${productsURL}.json`, {
   console.log(networkError.message);
 }).then(jsonResponse => {
   console.log(`added item:`, jsonResponse);
-})
-location.reload()
+}).then (location.reload())
 }
 
 addBtn.addEventListener("click", handleAdd)
