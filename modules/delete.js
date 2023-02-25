@@ -1,5 +1,5 @@
 const deleteBtn = document.getElementById(`delete`)
-let productsListItems = document.getElementsByClassName(`products-box-list-item`)
+let productsListItems = document.getElementsByClassName(`products-list-item`)
 
 export default function Delete (productsURL) {
   
@@ -14,7 +14,6 @@ export default function Delete (productsURL) {
   }
 
   function handleDelete (){
-    
     let foo = getCheckedProductsIDs(productsListItems)
 
     // below loops through every ID checked for deletion and requests DELETE from API

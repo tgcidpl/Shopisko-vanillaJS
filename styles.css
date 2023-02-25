@@ -2,26 +2,31 @@
   box-sizing: border-box;
 }
 
-h1{
+h1 {
   color: blue;
 }
 
-.products-box{
-border: 1px solid blueviolet;
-}
-
-.products-box-list{
+.products-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  } 
-  
-  .products-box-list>li{
-border: 1px solid grey;
-padding: 0 2rem;
-cursor: pointer;
-  }
-  .products-box-list>li:hover{
-    background-color: aqua;
-  }
+  border: 1px solid blueviolet;
+  padding: 2rem;
+}
+
+.products-list > li {
+  border: 1px solid grey;
+  padding: 0 2rem;
+  cursor: pointer;
+}
+.products-list > li:hover {
+  background-color: aqua;
+}
+
+.products-list-item-image > img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  margin-top: 1rem;
+}
