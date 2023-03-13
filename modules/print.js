@@ -43,14 +43,16 @@ export default function Print(productsURL) {
               <h2"><small>$</small>${product[1]["price"]}</h2>
               <p>Brand: ${product[1]["brand"]}</p>
               <p>Quantity: ${product[1]["quantity"]}</p>
-            <button id="addBtn">Add to Cart</button>
+            <button class="addToCartBtn">Add to Cart</button>
               </div>
             <input type="checkbox" name="checkbox" class="checkbox"></input></li>`;
       });
-
-   
-       document.querySelectorAll('#addBtn').forEach(el => {
+       document.querySelectorAll('.addToCartBtn').forEach(el => {
         el.addEventListener('click', ()=> addToCart())
       }) 
-}
-}
+
+    }
+    function addToCart () {
+      console.log('product:')
+    }
+  }

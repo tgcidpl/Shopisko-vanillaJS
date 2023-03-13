@@ -10,9 +10,3 @@ Add(productsURL);
 Print(productsURL);
 Delete(productsURL);
 Cart();
-
-
-const addToCart = (id) => {
-  id ? console.log(id)
-  : console.log("no id");
-};
